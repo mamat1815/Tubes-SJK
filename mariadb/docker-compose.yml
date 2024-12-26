@@ -1,0 +1,19 @@
+
+services:
+  db:
+    image: mariadb
+    container_name: dbserver
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+    volumes:
+      - /run/mysqld:/run/mysqld
+    command: mysqld --user=root
+    ports:
+      - "3306:3306"
+    networks:
+      - custom_network
+networks:
+  custom_network:
+    name: santuy
+    external: true
+

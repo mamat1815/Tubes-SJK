@@ -1,0 +1,13 @@
+services:
+  web:
+    image: apache
+    container_name: webserver
+    ports:
+      - "80:80"
+    volumes:
+      - C:\Users\muhaf\Documents\Kuliah\Semester 3\SJK\Tubes SJK\webfolder:/var/www/html
+    networks:
+      - santuy
+networks:
+  santuy:
+    external: true
